@@ -1,0 +1,303 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_data_": [
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Alex Sion"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "President"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image1.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Ben Cortez"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Senior Director"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image2.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Dan Marous"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Senior Product Manager"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image3.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Dawn Edwards"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Manager"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image4.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Elizabeth James"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Associate Product Manager"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image5.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Sales"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Ha Joon Lee"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "President"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image6.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Sales"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Jared Ridge"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Senior Director"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image7.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Sales"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Jeremaih Crosman"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Business Development Manager"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image8.png"
+            }
+        },
+        {
+            "employeeFieldGroup": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Product Management"
+            },
+            "employeeFieldName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Jim Lathmore"
+            },
+            "employeeFieldTitle": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Chief Executive Officer"
+            },
+            "employeeId": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "employeeSegImage": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "image9.png"
+            }
+        }
+    ],
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "08",
+    "focusedindex": null,
+    "focuseditem": null,
+    "generatedtemplate": "h356d17f345d412788fb70fc72960fd4",
+    "groupcells": false,
+    "hasSections": false,
+    "id": "employeeSegment",
+    "ide_onRowClick": "AS_Segment_ce3a21e8b0374dcc83650de7b116c97c",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "none"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "d83ae33212af45c4b76d7682c9967727",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "listContainer",
+    "pf": "frmList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "h356d17f345d412788fb70fc72960fd4",
+    "rowcounter": 8,
+    "rowfocusskin": "saf63aaec88d4dc9a3d9748b0671fce6",
+    "rowskin": "sa630a340005482ca3a9dde4cc1defa4",
+    "rowtemplate": "FBox0f8ef70119cb149",
+    "seccounter": 0,
+    "sectionheaderskin": "s5e518e817834f758a561dbc588edf10",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "separatorrequired": false,
+    "showscrollbars": false,
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "employeeFieldGroup": "employeeFieldGroup",
+        "employeeFieldName": "employeeFieldName",
+        "employeeFieldTitle": "employeeFieldTitle",
+        "employeeId": "employeeId",
+        "employeeSegFields": "employeeSegFields",
+        "employeeSegImage": "employeeSegImage",
+        "employeeSegLine": "employeeSegLine"
+    },
+    "zindex": 1
+}

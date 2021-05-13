@@ -1,0 +1,171 @@
+{
+	"AS_Button_dd060549d4a147d9b2e59334adf61c5c": {
+		"id": "AS_Button_dd060549d4a147d9b2e59334adf61c5c",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"contextObj": {
+			"type": "forms",
+			"platform": null,
+			"KUID": "j0a93d7cb3244a2db76eb95e50154813"
+		},
+		"language": "js",
+		"actions": [
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_e58dd080b1e64fa6b5f2a87d50bc1204",
+				"selectedOption": "show",
+				"type": "LOADING_INDICATOR",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb",
+				"type": "INVOKE_IDENTITY_SERVICE",
+				"mappings": {
+					"ME_Mapping_c338a9f82f664e93964e809bb2a8efb5": {
+						"channel": "tablet",
+						"id": "ME_Mapping_c338a9f82f664e93964e809bb2a8efb5",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "tbxuserid",
+							"widgetPath": "this.view.tbxuserid",
+							"widgetType": "TextField",
+							"dataType": "string",
+							"itemId": "frmLogin",
+							"widgetKUID": "i712a561e07a4cbe88584e81ca3e0105",
+							"itemKUID": "j0a93d7cb3244a2db76eb95e50154813",
+							"forkedPlatform": "all"
+						},
+						"target": {
+							"type": "Services",
+							"propertyName": "userid",
+							"dataType": "string",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "ShoppingIdentity",
+								"type": "identity",
+								"operationname": "login",
+								"serviceid": "15821c29-3f0b-4093-b23c-efc83e591691",
+								"login_type": "basic",
+								"isDeepLinkRequired": false
+							}
+						}
+					},
+					"ME_Mapping_hb27afc23b324b078884897a71ad84f0": {
+						"channel": "tablet",
+						"id": "ME_Mapping_hb27afc23b324b078884897a71ad84f0",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "tbxpassword",
+							"widgetPath": "this.view.tbxpassword",
+							"widgetType": "TextField",
+							"dataType": "string",
+							"itemId": "frmLogin",
+							"widgetKUID": "dbd5096a693742b69d4a783f4eaeae78",
+							"itemKUID": "j0a93d7cb3244a2db76eb95e50154813",
+							"forkedPlatform": "all"
+						},
+						"target": {
+							"type": "Services",
+							"propertyName": "password",
+							"dataType": "string",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "ShoppingIdentity",
+								"type": "identity",
+								"operationname": "login",
+								"serviceid": "15821c29-3f0b-4093-b23c-efc83e591691",
+								"login_type": "basic",
+								"isDeepLinkRequired": false
+							}
+						}
+					}
+				},
+				"mappingsOrder": [
+					"ME_Mapping_c338a9f82f664e93964e809bb2a8efb5",
+					"ME_Mapping_hb27afc23b324b078884897a71ad84f0"
+				],
+				"serviceconfig": {
+					"servicename": "ShoppingIdentity",
+					"type": "identity",
+					"operationname": "login",
+					"serviceid": "15821c29-3f0b-4093-b23c-efc83e591691",
+					"login_type": "basic",
+					"isDeepLinkRequired": false
+				},
+				"enableMappingEditor": true,
+				"useDeviceBrowser": false,
+				"isDeepLinkRequired": false
+			},
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_cac58f2784c2420496dde348a9cc5981",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Success",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "NAVIGATE_TO_FORM__ide_onClick_b512c382c0514ae79d0499160f2ea1f5",
+				"type": "NAVIGATE_TO_FORM",
+				"formId": "frmList",
+				"formKUID": "a5f4a43913094f90a21411622a129a5b",
+				"mappings": {},
+				"mappingsOrder": [],
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb",
+				"callbackType": "Success",
+				"enableMappingEditor": true,
+				"package": "",
+				"isCustomInput": false
+			},
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_jc9c7853bf244ea594f4129242fc12e9",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Failure",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "SHOW_ALERT_ide_onClick_d51554f7765347c5b132b3818fc3751b",
+				"type": "SHOW_ALERT",
+				"alertType": "constants.ALERT_TYPE_INFO",
+				"alertTitle": null,
+				"yesLabel": null,
+				"noLabel": null,
+				"alertIcon": null,
+				"alertMessage": "Login failed. Please try again.",
+				"messageType": "constant",
+				"alertHandler": null,
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb",
+				"callbackType": "Failure",
+				"alertTitlei18n": null,
+				"yesLabeli18n": null,
+				"noLabeli18n": null,
+				"alertMessagei18n": null,
+				"iconPosition": "constants.ALERT_ICON_POSITION_LEFT",
+				"disabled": null
+			}
+		]
+	}
+}

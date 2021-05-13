@@ -1,0 +1,101 @@
+{
+	"AS_Button_df8a343f702b42d2a49ed2544a907574": {
+		"id": "AS_Button_df8a343f702b42d2a49ed2544a907574",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"contextObj": {
+			"type": "forms",
+			"platform": null,
+			"KUID": "d82146a3c27b4743b15b8e1d65a5de7c"
+		},
+		"language": "js",
+		"actions": [
+			{
+				"id": "LOADING_INDICATOR__a95c25fcd6e14be2bedcf2bc937b61c8",
+				"selectedOption": "show",
+				"type": "LOADING_INDICATOR",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9",
+				"type": "INVOKE_IDENTITY_SERVICE",
+				"mappings": {},
+				"mappingsOrder": [],
+				"serviceconfig": {
+					"operationname": "logout",
+					"servicename": "ShoppingIdentity",
+					"type": "identity",
+					"isDeepLinkRequired": false,
+					"login_type": "basic"
+				},
+				"enableMappingEditor": true,
+				"useDeviceBrowser": false,
+				"isDeepLinkRequired": false
+			},
+			{
+				"id": "LOADING_INDICATOR__i34662d3deff426d93faf2de13bfc58c",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Success",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "NAVIGATE_TO_FORM___dbc17aafd0804078b7802e58be21c3da",
+				"type": "NAVIGATE_TO_FORM",
+				"formId": "frmLogin",
+				"formKUID": "g2392df16f174afdab39cd2e147d5cc7",
+				"mappings": {},
+				"mappingsOrder": [],
+				"parentId": "INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9",
+				"callbackType": "Success",
+				"enableMappingEditor": true,
+				"package": "",
+				"navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"headerLogoutButton\"\n    }\n}",
+				"isCustomInput": false
+			},
+			{
+				"id": "LOADING_INDICATOR__e01f6628b5f5411a99248347fc06c11c",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Failure",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "SHOW_ALERT__d7542a1f7b8d419b9dfa6f97fac82b4c",
+				"type": "SHOW_ALERT",
+				"alertType": "constants.ALERT_TYPE_INFO",
+				"alertTitle": null,
+				"yesLabel": null,
+				"noLabel": null,
+				"alertIcon": null,
+				"alertMessage": "Logout Failed!",
+				"messageType": "constant",
+				"alertHandler": null,
+				"parentId": "INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9",
+				"callbackType": "Failure",
+				"alertTitlei18n": null,
+				"yesLabeli18n": null,
+				"noLabeli18n": null,
+				"alertMessagei18n": null,
+				"iconPosition": "constants.ALERT_ICON_POSITION_LEFT",
+				"disabled": null
+			}
+		]
+	}
+}

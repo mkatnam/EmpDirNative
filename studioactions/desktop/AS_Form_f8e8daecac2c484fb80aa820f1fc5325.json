@@ -1,0 +1,280 @@
+{
+	"AS_Form_f8e8daecac2c484fb80aa820f1fc5325": {
+		"id": "AS_Form_f8e8daecac2c484fb80aa820f1fc5325",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"contextObj": {
+			"type": "forms",
+			"platform": null,
+			"KUID": "ee48036bb14843458e8660797ac65f72"
+		},
+		"language": "js",
+		"actions": [
+			{
+				"id": "INVOKE_OBJECT_SERVICE_ide_onMapping_f47b91d9b34941c99dcd73b951c989d5",
+				"type": "INVOKE_OBJECT_SERVICE",
+				"inputparams": null,
+				"httpheaders": null,
+				"httpconfigs": null,
+				"isasynchronous": null,
+				"isoffline": null,
+				"isobject": true,
+				"mappings": {},
+				"mappingsOrder": [],
+				"serviceconfig": {
+					"servicename": "EmployeeServices",
+					"type": "objectsvcs",
+					"objectname": "employees",
+					"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+					"methodname": "get"
+				},
+				"enableMappingEditor": true
+			},
+			{
+				"id": "ADD_MAPPING_ide_onMapping_b7ea93e030ed4e8a9155f8614fdfb193",
+				"type": "ADD_MAPPING",
+				"mappings": {
+					"ME_Mapping_c54e7239fb49437db3ef8398c959ae3b": {
+						"channel": "desktop",
+						"id": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "records",
+							"dataType": "collection",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "rowData",
+							"widgetId": "employeeSegment",
+							"widgetPath": "this.view.employeeSegment",
+							"widgetType": "Segment",
+							"dataType": "collection",
+							"itemId": "frmList",
+							"collectionId": "masterdata",
+							"widgetKUID": "d83ae33212af45c4b76d7682c9967727",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					},
+					"ME_Mapping_e891a389c07f462abcdbc1fe6fbae6bc": {
+						"channel": "desktop",
+						"id": "ME_Mapping_e891a389c07f462abcdbc1fe6fbae6bc",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "Department",
+							"dataType": "string",
+							"collectionId": "records",
+							"propertyPath": "[\"records\"][0][\"Department\"]",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "employeeFieldGroup",
+							"widgetPath": "this.view.employeeFieldGroup",
+							"widgetType": "Label",
+							"dataType": "string",
+							"templateType": "rowTemplate",
+							"itemId": "frmList",
+							"parentMappingId": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+							"segmentId": "employeeSegment",
+							"segmentKUID": "d83ae33212af45c4b76d7682c9967727",
+							"widgetKUID": "a95efb26f60d45aba37fdd4a25a8e303",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					},
+					"ME_Mapping_f35d5e97fd674a92a044f37fec6039e6": {
+						"channel": "desktop",
+						"id": "ME_Mapping_f35d5e97fd674a92a044f37fec6039e6",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "Designation",
+							"dataType": "string",
+							"collectionId": "records",
+							"propertyPath": "[\"records\"][0][\"Designation\"]",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "employeeFieldTitle",
+							"widgetPath": "this.view.employeeFieldTitle",
+							"widgetType": "Label",
+							"dataType": "string",
+							"templateType": "rowTemplate",
+							"itemId": "frmList",
+							"parentMappingId": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+							"segmentId": "employeeSegment",
+							"segmentKUID": "d83ae33212af45c4b76d7682c9967727",
+							"widgetKUID": "ec1ba42aba904bd2b5da5536287bfebf",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					},
+					"ME_Mapping_ffbd7d09147e4c4bac31f943018aafd9": {
+						"channel": "desktop",
+						"id": "ME_Mapping_ffbd7d09147e4c4bac31f943018aafd9",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "Emp_id",
+							"dataType": "string",
+							"collectionId": "records",
+							"propertyPath": "[\"records\"][0][\"Emp_id\"]",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "employeeId",
+							"widgetPath": "this.view.employeeId",
+							"widgetType": "Label",
+							"dataType": "string",
+							"templateType": "rowTemplate",
+							"itemId": "frmList",
+							"parentMappingId": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+							"segmentId": "employeeSegment",
+							"segmentKUID": "d83ae33212af45c4b76d7682c9967727",
+							"widgetKUID": "d23386ac734249e2b1269976b3cf0666",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					},
+					"ME_Mapping_d08598ab9b5146849ddb980eab7005bf": {
+						"channel": "desktop",
+						"id": "ME_Mapping_d08598ab9b5146849ddb980eab7005bf",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "Image_URL",
+							"dataType": "string",
+							"collectionId": "records",
+							"propertyPath": "[\"records\"][0][\"Image_URL\"]",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "src",
+							"widgetId": "employeeSegImage",
+							"widgetPath": "this.view.employeeSegImage",
+							"widgetType": "Image",
+							"dataType": "string",
+							"templateType": "rowTemplate",
+							"itemId": "frmList",
+							"parentMappingId": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+							"segmentId": "employeeSegment",
+							"segmentKUID": "d83ae33212af45c4b76d7682c9967727",
+							"widgetKUID": "ed74486616f14441b49aab201e1d1988",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					},
+					"ME_Mapping_e941be4374c74fbaa2200a7eb7f7106e": {
+						"channel": "desktop",
+						"id": "ME_Mapping_e941be4374c74fbaa2200a7eb7f7106e",
+						"type": "MAPPING",
+						"callbackType": null,
+						"rectified": true,
+						"source": {
+							"type": "Services",
+							"propertyName": "Name",
+							"dataType": "string",
+							"collectionId": "records",
+							"propertyPath": "[\"records\"][0][\"Name\"]",
+							"forkedPlatform": "all",
+							"serviceconfig": {
+								"servicename": "EmployeeServices",
+								"type": "objectsvcs",
+								"objectname": "employees",
+								"serviceid": "bd298473-012c-4fd2-9c02-ac4547645816",
+								"methodname": "get"
+							}
+						},
+						"target": {
+							"type": "Forms",
+							"propertyName": "text",
+							"widgetId": "employeeFieldName",
+							"widgetPath": "this.view.employeeFieldName",
+							"widgetType": "Label",
+							"dataType": "string",
+							"templateType": "rowTemplate",
+							"itemId": "frmList",
+							"parentMappingId": "ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+							"segmentId": "employeeSegment",
+							"segmentKUID": "d83ae33212af45c4b76d7682c9967727",
+							"widgetKUID": "a48aa6ab9932431ea69cb6af1e0effb3",
+							"itemKUID": "a5f4a43913094f90a21411622a129a5b",
+							"forkedPlatform": "all"
+						}
+					}
+				},
+				"mappingsOrder": [
+					"ME_Mapping_c54e7239fb49437db3ef8398c959ae3b",
+					"ME_Mapping_e891a389c07f462abcdbc1fe6fbae6bc",
+					"ME_Mapping_f35d5e97fd674a92a044f37fec6039e6",
+					"ME_Mapping_ffbd7d09147e4c4bac31f943018aafd9",
+					"ME_Mapping_d08598ab9b5146849ddb980eab7005bf",
+					"ME_Mapping_e941be4374c74fbaa2200a7eb7f7106e"
+				],
+				"parentId": "INVOKE_OBJECT_SERVICE_ide_onMapping_f47b91d9b34941c99dcd73b951c989d5",
+				"callbackType": "Callback",
+				"enableMappingEditor": true
+			}
+		]
+	}
+}

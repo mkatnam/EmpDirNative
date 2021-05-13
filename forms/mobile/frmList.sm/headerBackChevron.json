@@ -1,0 +1,83 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "18dp"
+    },
+    "_left_": {
+        "type": "number",
+        "value": "14"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "number",
+        "value": "16"
+    },
+    "_skin_": "se90e4e929834633b4a7a7022302a16d",
+    "_src_": "backicon.png",
+    "_top_": {
+        "type": "string",
+        "value": "16dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "18dp"
+    },
+    "android": {
+        "render": false
+    },
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "id": "headerBackChevron",
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "iphone": {
+        "render": false
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "fc2ab549a0c1430fb33a849a2741ff9f",
+    "name": "kony.ui.Image2",
+    "parent": "headerContainer",
+    "pf": "frmList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "spaan": {
+        "render": false
+    },
+    "spabb": {
+        "render": false
+    },
+    "spaip": {
+        "render": false
+    },
+    "spawinphone8": {
+        "render": false
+    },
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "winphone8": {
+        "render": false
+    },
+    "zindex": 1
+}

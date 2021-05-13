@@ -1,0 +1,101 @@
+{
+	"AS_Button_i124d7e94a7f4866800ffe1225a5c220": {
+		"id": "AS_Button_i124d7e94a7f4866800ffe1225a5c220",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"contextObj": {
+			"type": "forms",
+			"platform": null,
+			"KUID": "ee48036bb14843458e8660797ac65f72"
+		},
+		"language": "js",
+		"actions": [
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_eb3d610ba1594a64954159ad157f2033",
+				"selectedOption": "show",
+				"type": "LOADING_INDICATOR",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "INVOKE_IDENTITY_SERVICE_ide_onClick_b70202ac5aa941c9aed95b967b92babf",
+				"type": "INVOKE_IDENTITY_SERVICE",
+				"mappings": {},
+				"mappingsOrder": [],
+				"serviceconfig": {
+					"operationname": "logout",
+					"servicename": "ShoppingIdentity",
+					"type": "identity",
+					"isDeepLinkRequired": false,
+					"login_type": "basic"
+				},
+				"enableMappingEditor": true,
+				"useDeviceBrowser": false,
+				"isDeepLinkRequired": false
+			},
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_b1d2494492fc443ab31ff64499667c7b",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_b70202ac5aa941c9aed95b967b92babf",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Success",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "NAVIGATE_TO_FORM__ide_onClick_e2e8b1a9bbd54d728685070db2545a9c",
+				"type": "NAVIGATE_TO_FORM",
+				"formId": "frmLogin",
+				"formKUID": "g2392df16f174afdab39cd2e147d5cc7",
+				"mappings": {},
+				"mappingsOrder": [],
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_b70202ac5aa941c9aed95b967b92babf",
+				"callbackType": "Success",
+				"enableMappingEditor": true,
+				"package": "",
+				"navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"headerLogoutButton\"\n    }\n}",
+				"isCustomInput": false
+			},
+			{
+				"id": "LOADING_INDICATOR_ide_onClick_i47ae8aba7f64183a34aa3d28cc1acdd",
+				"selectedOption": "dismiss",
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_b70202ac5aa941c9aed95b967b92babf",
+				"type": "LOADING_INDICATOR",
+				"callbackType": "Failure",
+				"skin": "none",
+				"position": "constants.LOADING_SCREEN_POSITION_FULL_SCREEN",
+				"isBlocked": "true",
+				"showProgressIndicator": "true"
+			},
+			{
+				"id": "SHOW_ALERT_ide_onClick_c4a8afe98f0c4ff3adeb6ebaef124225",
+				"type": "SHOW_ALERT",
+				"alertType": "constants.ALERT_TYPE_INFO",
+				"alertTitle": null,
+				"yesLabel": null,
+				"noLabel": null,
+				"alertIcon": null,
+				"alertMessage": "Logout Failed!",
+				"messageType": "constant",
+				"alertHandler": null,
+				"parentId": "INVOKE_IDENTITY_SERVICE_ide_onClick_b70202ac5aa941c9aed95b967b92babf",
+				"callbackType": "Failure",
+				"alertTitlei18n": null,
+				"yesLabeli18n": null,
+				"noLabeli18n": null,
+				"alertMessagei18n": null,
+				"iconPosition": "constants.ALERT_ICON_POSITION_LEFT",
+				"disabled": null
+			}
+		]
+	}
+}

@@ -1,0 +1,56 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "22dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "number",
+        "value": "16"
+    },
+    "_skin_": "se90e4e929834633b4a7a7022302a16d",
+    "_src_": "logouticon.png",
+    "_top_": {
+        "type": "string",
+        "value": "16dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "22dp"
+    },
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "id": "headerLogoutImage",
+    "imagescalemode": 1,
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "f254ad496b394a92bdfd296e8de5ca01",
+    "name": "kony.ui.Image2",
+    "parent": "headerContainer",
+    "pf": "frmList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 1
+}

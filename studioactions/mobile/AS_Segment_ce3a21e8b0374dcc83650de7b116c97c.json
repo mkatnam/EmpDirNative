@@ -1,0 +1,50 @@
+{
+	"AS_Segment_ce3a21e8b0374dcc83650de7b116c97c": {
+		"id": "AS_Segment_ce3a21e8b0374dcc83650de7b116c97c",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			},
+			{
+				"datatype": "number",
+				"name": "sectionNumber"
+			},
+			{
+				"datatype": "number",
+				"name": "rowNumber"
+			}
+		],
+		"contextObj": {
+			"name": "frmList",
+			"type": "forms",
+			"platform": null,
+			"KUID": "a5f4a43913094f90a21411622a129a5b"
+		},
+		"language": "js",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__f55bcaf032ce4aa6a566aa77a5735171",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "NAVIGATE_TO_FORM___c7ccd33b9025473782b098f76980408a",
+				"type": "NAVIGATE_TO_FORM",
+				"formId": "frmDetails",
+				"formKUID": "d82146a3c27b4743b15b8e1d65a5de7c",
+				"mappings": {},
+				"mappingsOrder": [],
+				"parentId": "",
+				"callbackType": null,
+				"enableMappingEditor": true,
+				"package": "",
+				"navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onRowClick\",\n        \"widgetId\": \"employeeSegment\"\n    }\n}",
+				"isCustomInput": false
+			}
+		]
+	}
+}

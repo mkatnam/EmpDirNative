@@ -1,0 +1,99 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizScrollFlexForm",
+    "DNDConfig": null,
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s3c9a64bea824d54aca09829887dd60a",
+    "_title_": null,
+    "addWidgetsdone": false,
+    "allboxes": [],
+    "androidwearos": {
+        "needAppMenu": false
+    },
+    "breakpointInfo": {
+        "b1": {
+            "width": 1366
+        },
+        "b2": {
+            "width": 1024
+        },
+        "b3": {
+            "width": 640
+        }
+    },
+    "canUpdateUI": true,
+    "children": [
+        "masterContainer"
+    ],
+    "containerweight": 100,
+    "controllerInfo": {
+        "default": {
+            "channel": "desktop",
+            "name": "frmListController"
+        }
+    },
+    "currentLocale": "default",
+    "desktopweb": {
+        "needAppMenu": false
+    },
+    "displayorientation": 1,
+    "enabledforidletimeout": false,
+    "id": "frmList",
+    "ide_onMapping": "AS_Form_f8e8daecac2c484fb80aa820f1fc5325",
+    "info": null,
+    "initdone": false,
+    "inputaccessoryviewtype": 4,
+    "ipad": {
+        "needAppMenu": false,
+        "psp": {
+            "inputAccessoryViewType": 4
+        },
+        "titleBar": false
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kiosk": {
+        "needAppMenu": false
+    },
+    "kuid": "ee48036bb14843458e8660797ac65f72",
+    "layouttype": 2,
+    "name": "kony.ui.Form2",
+    "needappmenu": false,
+    "paddinginpixel": false,
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainscrollposition": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "spaandroidtablet": {
+        "needAppMenu": false
+    },
+    "spabb": {
+        "needAppMenu": false
+    },
+    "spaipad": {
+        "needAppMenu": false
+    },
+    "spawindowstablet": {
+        "needAppMenu": false
+    },
+    "titleBarSkin": "sf8691431bec47aba5de2dda3234953a",
+    "titlebar": true,
+    "type": 3,
+    "wType": "Form",
+    "windows8": {
+        "needAppMenu": false
+    }
+}

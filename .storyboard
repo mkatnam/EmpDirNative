@@ -1,0 +1,163 @@
+{
+    "models": {
+        "mobile": {
+            "class": "GraphLinksModel",
+            "linkDataArray": [
+                {
+                    "actionId": "NAVIGATE_TO_FORM___d8d9a842f6d1430a9daec2045627bb0d",
+                    "actionSequenceId": "AS_Button_bfc64c6d54f54bbabc5086be43b8cb0d",
+                    "beautifiedPath": "frmDetails > headerBackButton > onClick",
+                    "evt": "ide_onClick",
+                    "from": "d82146a3c27b4743b15b8e1d65a5de7c",
+                    "isPSP": false,
+                    "points": [
+                        177.6,
+                        506.645263671875,
+                        187.6,
+                        506.645263671875,
+                        188,
+                        506.645263671875,
+                        188,
+                        506.645263671875,
+                        196,
+                        506.645263671875,
+                        196,
+                        133.91193033854165,
+                        445.5999999999999,
+                        133.91193033854165,
+                        463.5999999999999,
+                        133.91193033854165
+                    ],
+                    "to": "a5f4a43913094f90a21411622a129a5b",
+                    "widgetKUID": "ca3c580fa2304e81b7362052ed55c4da"
+                },
+                {
+                    "actionId": "NAVIGATE_TO_FORM___dbc17aafd0804078b7802e58be21c3da",
+                    "actionSequenceId": "AS_Button_df8a343f702b42d2a49ed2544a907574",
+                    "beautifiedPath": "frmDetails > headerLogoutButton > onClick",
+                    "evt": "ide_onClick",
+                    "from": "d82146a3c27b4743b15b8e1d65a5de7c",
+                    "isPSP": false,
+                    "points": [
+                        177.6,
+                        670.2452636718749,
+                        203.6,
+                        670.2452636718749,
+                        330.6,
+                        670.2452636718749,
+                        330.6,
+                        588.445263671875,
+                        786.1999999999999,
+                        588.445263671875,
+                        786.1999999999999,
+                        670.245263671875,
+                        893.1999999999999,
+                        670.245263671875,
+                        919.1999999999999,
+                        670.245263671875
+                    ],
+                    "to": "ee85f8531c894ceda728ac165ebad9c5",
+                    "widgetKUID": "i3c1cddda99d49d2a19bdd29128c5e36"
+                },
+                {
+                    "actionId": "NAVIGATE_TO_FORM___f0f6dc775f3e4238b478296917b9c63f",
+                    "actionSequenceId": "AS_Button_c3c22fb1a3a147678f7dc74a1ce1fee8",
+                    "beautifiedPath": "frmList > headerLogoutButton > onClick",
+                    "evt": "ide_onClick",
+                    "from": "a5f4a43913094f90a21411622a129a5b",
+                    "isPSP": false,
+                    "points": [
+                        633.1999999999999,
+                        133.91193033854165,
+                        651.1999999999999,
+                        133.91193033854165,
+                        765.5876303579918,
+                        133.91193033854165,
+                        765.5876303579918,
+                        506.645263671875,
+                        909.1999999999999,
+                        506.645263671875,
+                        919.1999999999999,
+                        506.645263671875
+                    ],
+                    "to": "ee85f8531c894ceda728ac165ebad9c5",
+                    "widgetKUID": "bf1fc31a5ec646abab5f2b062c84c110"
+                },
+                {
+                    "actionId": "NAVIGATE_TO_FORM___c7ccd33b9025473782b098f76980408a",
+                    "actionSequenceId": "AS_Segment_ce3a21e8b0374dcc83650de7b116c97c",
+                    "beautifiedPath": "frmList > employeeSegment > onRowClick",
+                    "evt": "ide_onRowClick",
+                    "from": "a5f4a43913094f90a21411622a129a5b",
+                    "isPSP": false,
+                    "points": [
+                        463.5999999999999,
+                        242.97859700520831,
+                        453.5999999999999,
+                        242.97859700520831,
+                        309.9876303579918,
+                        242.97859700520831,
+                        309.9876303579918,
+                        588.445263671875,
+                        195.6,
+                        588.445263671875,
+                        177.6,
+                        588.445263671875
+                    ],
+                    "to": "d82146a3c27b4743b15b8e1d65a5de7c",
+                    "widgetKUID": "d83ae33212af45c4b76d7682c9967727"
+                },
+                {
+                    "actionId": "NAVIGATE_TO_FORM___ebeca33d1834405fb5bf912ed142a4dc",
+                    "actionSequenceId": "AS_Button_f41bf70e129843ba9b9baa1b11438ea4",
+                    "beautifiedPath": "frmLogin > loginButton > onClick",
+                    "evt": "ide_onClick",
+                    "from": "ee85f8531c894ceda728ac165ebad9c5",
+                    "isPSP": false,
+                    "points": [
+                        919.1999999999999,
+                        588.445263671875,
+                        901.1999999999999,
+                        588.445263671875,
+                        900,
+                        588.445263671875,
+                        900,
+                        242.97859700520831,
+                        643.1999999999999,
+                        242.97859700520831,
+                        633.1999999999999,
+                        242.97859700520831
+                    ],
+                    "to": "a5f4a43913094f90a21411622a129a5b",
+                    "widgetKUID": "d8cba6562c5847cdb436e61c13f8c697"
+                }
+            ],
+            "nodeDataArray": [
+                {
+                    "formKUID": "d82146a3c27b4743b15b8e1d65a5de7c",
+                    "formName": "frmDetails",
+                    "isStartupForm": false,
+                    "key": "d82146a3c27b4743b15b8e1d65a5de7c",
+                    "loc": "8 424.845263671875",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "a5f4a43913094f90a21411622a129a5b",
+                    "formName": "frmList",
+                    "isStartupForm": false,
+                    "key": "a5f4a43913094f90a21411622a129a5b",
+                    "loc": "463.5999999999999 24.845263671875003",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "ee85f8531c894ceda728ac165ebad9c5",
+                    "formName": "frmLogin",
+                    "isStartupForm": true,
+                    "key": "ee85f8531c894ceda728ac165ebad9c5",
+                    "loc": "919.1999999999999 424.845263671875",
+                    "thumbnailURL": null
+                }
+            ]
+        }
+    }
+}
