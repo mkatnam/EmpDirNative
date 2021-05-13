@@ -1,8 +1,13 @@
 define({
     /*
-          This is an auto generated file and any modifications to it may result in corruption of the action sequence.
-        */
-    /** onClick defined for headerLogoutButton **/
+        This is an auto generated file and any modifications to it may result in corruption of the action sequence.
+    */
+    AS_Segment_ce3a21e8b0374dcc83650de7b116c97c: function AS_Segment_ce3a21e8b0374dcc83650de7b116c97c(eventobject, sectionNumber, rowNumber) {
+        var self = this;
+        selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;
+        var ntf = new kony.mvc.Navigation("frmDetails");
+        ntf.navigate();
+    },
     AS_Button_c3c22fb1a3a147678f7dc74a1ce1fee8: function AS_Button_c3c22fb1a3a147678f7dc74a1ce1fee8(eventobject) {
         var self = this;
 
@@ -40,33 +45,32 @@ define({
         logout_inputparam["operation"] = "logout";
         ShoppingIdentity$logout = mfidentityserviceinvoker("ShoppingIdentity", logout_inputparam, INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Success, INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Failure);
     },
-    /** onMapping defined for frmList **/
     AS_Form_f137f613a1034f27ab9f758ce187856f: function AS_Form_f137f613a1034f27ab9f758ce187856f(eventobject) {
         var self = this;
 
         function INVOKE_OBJECT_SERVICE__a927b7e02a554f5c8f9ef347c0ba849a_Callback(employees) {
-            var tempCollection4204 = [];
-            var tempData6746 = employees.records;
-            for (var each2351 in tempData6746) {
-                tempCollection4204.push({
+            var tempCollection2059 = [];
+            var tempData4704 = employees.records;
+            for (var each4864 in tempData4704) {
+                tempCollection2059.push({
                     "employeeFieldGroup": {
-                        "text": tempData6746[each2351]["Department"]
+                        "text": tempData4704[each4864]["Department"]
                     },
                     "employeeFieldTitle": {
-                        "text": tempData6746[each2351]["Designation"]
+                        "text": tempData4704[each4864]["Designation"]
                     },
                     "employeeId": {
-                        "text": tempData6746[each2351]["Emp_id"]
+                        "text": tempData4704[each4864]["Emp_id"]
                     },
                     "employeeSegImage": {
-                        "src": tempData6746[each2351]["Image_URL"]
+                        "src": tempData4704[each4864]["Image_URL"]
                     },
                     "employeeFieldName": {
-                        "text": tempData6746[each2351]["Name"]
+                        "text": tempData4704[each4864]["Name"]
                     },
                 });
             }
-            self.view.employeeSegment.setData(tempCollection4204);
+            self.view.employeeSegment.setData(tempCollection2059);
         }
         if (employees_inputparam == undefined) {
             var employees_inputparam = {};
@@ -81,12 +85,5 @@ define({
         var employees_httpconfigs = {};
         employees_inputparam["httpconfig"] = employees_httpconfigs;
         EmployeeServices$employees$get = mfobjectsecureinvokerasync(employees_inputparam, "EmployeeServices", "employees", INVOKE_OBJECT_SERVICE__a927b7e02a554f5c8f9ef347c0ba849a_Callback);
-    },
-    /** onRowClick defined for employeeSegment **/
-    AS_Segment_ce3a21e8b0374dcc83650de7b116c97c: function AS_Segment_ce3a21e8b0374dcc83650de7b116c97c(eventobject, sectionNumber, rowNumber) {
-        var self = this;
-        selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;
-        var ntf = new kony.mvc.Navigation("frmDetails");
-        ntf.navigate();
     }
 });

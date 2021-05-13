@@ -9,10 +9,9 @@ require([/*<Test Suites/test suite1>*/],function(){
   require([/*<Test Suites/test suite2>*/], function(){
     //and so on
         require([/*<Test Suites/last test suite>*/], function(){
-            /*
-            Uncomment the code in this block before executing if using option 2
+            require(["<Test Suites/emp_dir_web_testsuite>"], function(){
             jasmine.getEnv().execute();  
-            */
+        });
  
         });
   });
