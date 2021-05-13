@@ -1,0 +1,57 @@
+[
+    {
+        "testName": "emp_dir_web_testsuite",
+        "result": "jasmineReport13-05-2021_15_32_28.html",
+        "passedCount": 1,
+        "failedCount": 0,
+        "pendingCount": 0,
+        "timeStamp": "13-05-2021 15:32:28",
+        "runnerType": "TestSuiteRunner",
+        "channelName": "Desktop",
+        "crashed": false
+    },
+    {
+        "testName": "emp_dir_web_testsuite",
+        "result": "jasmineReport13-05-2021_15_32_18.html",
+        "passedCount": 1,
+        "failedCount": 0,
+        "pendingCount": 0,
+        "timeStamp": "13-05-2021 15:32:18",
+        "runnerType": "TestSuiteRunner",
+        "channelName": "Desktop",
+        "crashed": false
+    },
+    {
+        "testName": "emp_dir_web_testsuite",
+        "result": "jasmineReport13-05-2021_15_32_07.html",
+        "passedCount": 1,
+        "failedCount": 0,
+        "pendingCount": 0,
+        "timeStamp": "13-05-2021 15:32:07",
+        "runnerType": "TestSuiteRunner",
+        "channelName": "Desktop",
+        "crashed": false
+    },
+    {
+        "testName": "emp_dir_tab_testsuite",
+        "result": "jasmineReport13-05-2021_15_31_40.html",
+        "passedCount": 1,
+        "failedCount": 0,
+        "pendingCount": 0,
+        "timeStamp": "13-05-2021 15:31:40",
+        "runnerType": "TestSuiteRunner",
+        "channelName": "Tablet",
+        "crashed": false
+    },
+    {
+        "testName": "emp_dir_native_testsuite",
+        "result": "jasmineReport13-05-2021_15_30_59.html",
+        "passedCount": 1,
+        "failedCount": 0,
+        "pendingCount": 0,
+        "timeStamp": "13-05-2021 15:30:59",
+        "runnerType": "TestSuiteRunner",
+        "channelName": "Mobile",
+        "crashed": false
+    }
+]

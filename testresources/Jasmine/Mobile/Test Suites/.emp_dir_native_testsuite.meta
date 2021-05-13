@@ -1,0 +1,8 @@
+{
+    "groupName": "Test Suites",
+    "testSuiteName": "emp_dir_native_testsuite",
+    "testCaseInfo": [
+        "emp_dir_native_testscripts.js"
+    ],
+    "usedBy": []
+}
