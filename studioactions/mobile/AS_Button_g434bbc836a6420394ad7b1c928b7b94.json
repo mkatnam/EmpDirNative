@@ -9,7 +9,6 @@
 			}
 		],
 		"contextObj": {
-			"name": "frmLogin",
 			"type": "forms",
 			"platform": null,
 			"KUID": "g2392df16f174afdab39cd2e147d5cc7"

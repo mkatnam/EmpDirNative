@@ -5,7 +5,7 @@ require([/*<test plan file>*/]);
 // or
 //2.  require the test suites along with executing jasmine as below
 //Nested require for test suites will ensure the order of test suite exectuion
-        require(["Test Suites/emp_dir_native_testsuite"], function(){
+        require(["/Test Suites/emp_dir_native_testsuite"], function(){
             jasmine.getEnv().execute();  
         });
 

@@ -2,7 +2,7 @@
 //1.Require any one of the created test plans like this:
 require([/*<test plan file>*/]);
 
- require(["Test Suites/emp_dir_tab_testsuite"], function(){
+ require(["/Test Suites/emp_dir_tab_testsuite"], function(){
             jasmine.getEnv().execute();  
         });
 
