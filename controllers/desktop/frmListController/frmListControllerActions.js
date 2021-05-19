@@ -45,28 +45,28 @@ define({
         var self = this;
 
         function INVOKE_OBJECT_SERVICE_ide_onMapping_f47b91d9b34941c99dcd73b951c989d5_Callback(employees) {
-            var tempCollection8471 = [];
-            var tempData9677 = employees.records;
-            for (var each3568 in tempData9677) {
-                tempCollection8471.push({
+            var tempCollection4308 = [];
+            var tempData8316 = employees.records;
+            for (var each229 in tempData8316) {
+                tempCollection4308.push({
                     "employeeFieldGroup": {
-                        "text": tempData9677[each3568]["Department"]
+                        "text": tempData8316[each229]["Department"]
                     },
                     "employeeFieldTitle": {
-                        "text": tempData9677[each3568]["Designation"]
+                        "text": tempData8316[each229]["Designation"]
                     },
                     "employeeId": {
-                        "text": tempData9677[each3568]["Emp_id"]
+                        "text": tempData8316[each229]["Emp_id"]
                     },
                     "employeeSegImage": {
-                        "src": tempData9677[each3568]["Image_URL"]
+                        "src": tempData8316[each229]["Image_URL"]
                     },
                     "employeeFieldName": {
-                        "text": tempData9677[each3568]["Name"]
+                        "text": tempData8316[each229]["Name"]
                     },
                 });
             }
-            self.view.employeeSegment.setData(tempCollection8471);
+            self.view.employeeSegment.setData(tempCollection4308);
         }
         if (employees_inputparam == undefined) {
             var employees_inputparam = {};

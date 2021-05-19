@@ -1,7 +1,8 @@
 define({
     /*
-        This is an auto generated file and any modifications to it may result in corruption of the action sequence.
-    */
+          This is an auto generated file and any modifications to it may result in corruption of the action sequence.
+        */
+    /** onClick defined for btnLOGIN **/
     AS_Button_g434bbc836a6420394ad7b1c928b7b94: function AS_Button_g434bbc836a6420394ad7b1c928b7b94(eventobject) {
         var self = this;
 
