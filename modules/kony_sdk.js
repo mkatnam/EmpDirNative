@@ -1,5 +1,5 @@
  /*
-  * kony-sdk-ide Version 9.2.9
+  * kony-sdk-ide Version 9.2.17
   */
         
 //#ifdef iphone
@@ -297,22 +297,6 @@
 //#define PLATFORM_NATIVE_WINDOWS_AND_SPA
 //#endif
 
-//#ifdef iphone
-//#define PLATFORM_NATIVE_IOS_WINDOWS
-//#endif
-//#ifdef ipad
-//#define PLATFORM_NATIVE_IOS_WINDOWS
-//#endif
-//#ifdef winphone8
-//#define PLATFORM_NATIVE_IOS_WINDOWS
-//#endif
-//#ifdef windows8
-//#define PLATFORM_NATIVE_IOS_WINDOWS
-//#endif
-//#ifdef desktop_kiosk
-//#define PLATFORM_NATIVE_IOS_WINDOWS
-//#endif
-
 //#ifdef universalwindows_offlineobjects
 //#define PLATFORM_NATIVE_WINDOWS
 //#endif
@@ -552,7 +536,7 @@ kony.sdk.currentInstance = null;
 kony.sdk.isLicenseUrlAvailable = true;
 kony.sdk.isOAuthLogoutInProgress = false;
 kony.sdk.constants = kony.sdk.constants || {};
-kony.sdk.version = "9.2.9";
+kony.sdk.version = "9.2.17";
 kony.sdk.logsdk = new konySdkLogger();
 kony.sdk.syncService = null;
 kony.sdk.dataStore = kony.sdk.dataStore || new konyDataStore();
@@ -1746,8 +1730,6 @@ kony.sdk.constants =
         AUTH_TOKEN: "authToken",
         DEVICE_AUTHTOKEN_HEADER: "X-Device-AuthToken",
         FUNCTION_STRING : "function",
-        SUCCESS_STRING : "SUCCESS",
-        ERROR_STRING : "ERROR",
 
         /**Parsed Template Constants**/
         PROCESSED_TEMPLATE: "processedTemplate",
@@ -1784,7 +1766,11 @@ kony.sdk.constants =
         /** Encryption Constants **/
         ENCRYPTION_ALGO_AES : "aes",
         HASH_FUNCTION_MD5 : "md5",
+        HASH_FUNCTION_SHA2 : "sha2",
         ENC_TYPE_PASSPHRASE : "passphrase",
+        ENC_PASSPHRASE_HASH_ALGO : "passphrasehashalgo",
+        AES_ALGO_KEY_STRENGTH_128 : 128,
+        AES_ALGO_KEY_STRENGTH_256 : 256,
         ENCRYPTION_APPCONFIG_FLAG : "appConfig_v1",
         SHARED_CLIENT_IDENTIFIER : "shared_client_identifier",
         MOBILE_FABRIC_SERVICE_DOC : "mobileFabricServiceDoc",
@@ -1811,6 +1797,7 @@ kony.sdk.constants =
         BACKEND_REFRESH_TOKEN : "backendRefreshToken",
         ENABLE_REFRESH_LOGIN : "enable_refresh_login",
         BACKEND_REFRESH_TOKENS : "backend_refresh_tokens",
+        RETAIN_BACKEND_REFRESH_TOKEN : "retain_backend_refresh_token",
         LOGIN_PROFILES : "profiles",
         LOGIN_PROVIDER_TYPE : "provider_type",
 
@@ -3632,31 +3619,37 @@ function IdentityService(konyRef, rec) {
 			 * @return boolean
 			 */
 			function doesStoredTokensNeedsToBeRemoved(networkResponse) {
-				var isStatus400or401 = false;
+				var deleteRefreshToken = false;
+				if (!kony.sdk.isNullOrUndefined(options) && !kony.sdk.isNullOrUndefined(options[kony.sdk.constants.RETAIN_BACKEND_REFRESH_TOKEN])) {
+					if (typeof options[kony.sdk.constants.RETAIN_BACKEND_REFRESH_TOKEN] === "boolean" && options[kony.sdk.constants.RETAIN_BACKEND_REFRESH_TOKEN]) {
+						kony.sdk.logsdk.debug("Not deleting refresh token as retain_backend_refresh_token flag is set to true.");
+						return deleteRefreshToken;
+					}
+				}
 				if (!kony.sdk.isNullOrUndefined(networkResponse)) {
 					if (networkResponse.hasOwnProperty(kony.sdk.constants.HTTP_STATUS_CODE)) {
 						//check for status in httpStatusCode
 						if (networkResponse[kony.sdk.constants.HTTP_STATUS_CODE] == kony.sdk.constants.HTTP_CODE_400) {
-							isStatus400or401 = true;
+							deleteRefreshToken = true;
 							kony.sdk.logsdk.error("got httpStatusCode as 400");
 						} else if (networkResponse[kony.sdk.constants.HTTP_STATUS_CODE] == kony.sdk.constants.HTTP_CODE_401) {
-							isStatus400or401 = true;
+							deleteRefreshToken = true;
 							kony.sdk.logsdk.error("got httpStatusCode as 401");
 						}
 					} else if (networkResponse.hasOwnProperty(kony.sdk.constants.KEY_HTTP_RESPONSE)
 						&& networkResponse[kony.sdk.constants.KEY_HTTP_RESPONSE].hasOwnProperty(kony.sdk.constants.KEY_RESPONSE_CODE)) {
 						//if we didnt get status in httpStatusCode, we might get status under httpresponse object in responsecode
 						if (networkResponse[kony.sdk.constants.KEY_HTTP_RESPONSE][kony.sdk.constants.KEY_RESPONSE_CODE] == kony.sdk.constants.HTTP_CODE_400) {
-							isStatus400or401 = true;
+							deleteRefreshToken = true;
 							kony.sdk.logsdk.error("got httpresponse.responsecode as 400");
 						} else if (networkResponse[kony.sdk.constants.KEY_HTTP_RESPONSE][kony.sdk.constants.KEY_RESPONSE_CODE] == kony.sdk.constants.HTTP_CODE_401) {
-							isStatus400or401 = true;
+							deleteRefreshToken = true;
 							kony.sdk.logsdk.error("got httpresponse.responsecode as 401");
 						}
 					}
 				}
 
-				return isStatus400or401;
+				return deleteRefreshToken;
 			}
 
 			function makeRefreshLoginCallToIdentity() {
@@ -10727,8 +10720,16 @@ kony.logger.createNewLogger = function(loggerName, loggerConfig) {
     //Exposed object and it's methods
     var loggerObj = kony.logger.createLoggerObject(loggerName, loggerConfig);
     if (loggerObj.config !== null && loggerObj.config.overrideConfig === true){
-        kony.logger.currentLogLevel = loggerObj.config.logFilterConfig.logLevel;
+        for (var key in kony.logger.logLevel) {
+            if (kony.logger.logLevel.hasOwnProperty(key)) {
+                if (kony.logger.logLevel[key].value == loggerObj.config.logFilterConfig.logLevel) {
+                    kony.logger.currentLogLevel = kony.logger.logLevel[key];
+                    break;
+                }
+            }
+        }
     }
+
     var seperator = " ";
 
     //#ifdef KONYLOGGER_IOS
@@ -12129,27 +12130,6 @@ function MessagingService(konyRef) {
 
 	this.manageGeoBoundariesCallback = function(data){
 
-	//#endif
-	    //#ifdef PLATFORM_NATIVE_ANDROID
-        if(data.state.toLocaleUpperCase() === kony.sdk.constants.ERROR_STRING){
-            kony.sdk.logsdk.error("MessagingService::manageGeoBoundariesCallback: error while creating geofences: " + JSON.stringify(data));
-            kony.sdk.verifyAndCallClosure(KNYMessagingService.refreshBoundariesFailureCallback, data);
-            return;
-        }
-
-        if(data.state.toLocaleUpperCase() === kony.sdk.constants.SUCCESS_STRING){
-            kony.sdk.logsdk.info("MessagingService::manageGeoBoundariesCallback: Successfully created geoFences:" + JSON.stringify(data));
-            if(!kony.sdk.isNullOrUndefined(KNYMessagingService.geoBoundariesResponse)
-                && !kony.sdk.isNullOrUndefined(KNYMessagingService.refreshBoundariesSuccessCallback)
-                && typeof(KNYMessagingService.refreshBoundariesSuccessCallback) == kony.sdk.constants.FUNCTION_STRING) {
-                kony.sdk.verifyAndCallClosure(KNYMessagingService.refreshBoundariesSuccessCallback, KNYMessagingService.geoBoundariesResponse);
-                KNYMessagingService.geoBoundariesResponse = null;
-                KNYMessagingService.refreshBoundariesSuccessCallback = null;
-            }
-            return;
-        }
-        //#endif
-    //#ifdef PLATFORM_NATIVE_ANDROID_IOS_WINDOWS
         var geoBoundariesOptions = KNYMessagingService.getGeoBoundariesOptions();
         if(data.state.toLocaleUpperCase() === "ENTRY" || data.state.toLocaleUpperCase() === "ENTER"){
             if(data.geofenceID !== "refreshBoundary"){
@@ -12301,14 +12281,7 @@ function MessagingService(konyRef) {
                     );
                 }
                 kony.location.createGeofences(geoBoundaries);
-                //#endif
-                //#ifdef PLATFORM_NATIVE_ANDROID
-                currentObject.geoBoundariesResponse = res;
-                //#endif
-                //#ifdef PLATFORM_NATIVE_IOS_WINDOWS
                 kony.sdk.verifyAndCallClosure(successCallback, res);
-                //#endif
-                //#ifdef PLATFORM_NATIVE_ANDROID_IOS_WINDOWS
 			},function(err){
 				kony.sdk.logsdk.perf("Executing finished getAndRefreshBoundaries with network failure");
                 kony.sdk.logsdk.error("MessagingService::getAndRefreshBoundaries failed to get geoBoundaries from KMS");
@@ -12360,20 +12333,8 @@ function MessagingService(konyRef) {
         }else{
             currentObject.refreshBoundariesFailureCallback = failureCallback;
         }
-        //#endif
-        //#ifdef PLATFORM_NATIVE_ANDROID
-        if(!typeof (successCallback) == kony.sdk.constants.FUNCTION_STRING){
-            kony.sdk.logsdk.perf("Executing finished registerGeoBoundaries with an exception");
-            throw new Exception(kony.sdk.errorConstants.MESSAGING_FAILURE, "successCallback is not provided");
-        }else{
-            currentObject.refreshBoundariesSuccessCallback = successCallback;
-        }
 
-        currentObject.geoBoundariesResponse = null;
-        //#endif
-        //#ifdef PLATFORM_NATIVE_ANDROID_IOS_WINDOWS
-
-		kony.sdk.logsdk.perf("Executing getCurrentPosition");
+        kony.sdk.logsdk.perf("Executing getCurrentPosition");
         kony.location.getCurrentPosition(
         	function(res){
 				kony.sdk.logsdk.perf("Executing finished getCurrentPosition's success");
@@ -12435,15 +12396,21 @@ function MessagingService(konyRef) {
 			},function(err){
                 kony.sdk.logsdk.perf("Executing finished getCurrentPosition's failure");
                 kony.sdk.logsdk.perf("Executing finished registerGeoBoundaries with an exception");
-				if(err.code == 1){
+				if(err.code === 1) {
                     throw new Exception(kony.sdk.errorConstants.MESSAGING_FAILURE, "Permission to access location is not enabled");
-				}else if(err.code == 2){
+				} else if(err.code === 2) {
 					throw new Exception(kony.sdk.errorConstants.MESSAGING_FAILURE, "Enable location and try again");
-				}else if(err.code == 3){
+				} else if(err.code === 3) {
                     kony.sdk.logsdk.error("MessagingService::registerGeoBoundaries Unable to retrieve current location.");
 					kony.sdk.verifyAndCallClosure(failureCallback, kony.sdk.error.getMessagingError("Unable to retrieve current location"));
-				}
-			}
+				} else if(err.code === 5) {
+                    throw new Exception(kony.sdk.errorConstants.MESSAGING_FAILURE, "Permission to access location in background is denied.");
+                } else if(err.code === 6) {
+                    throw new Exception(kony.sdk.errorConstants.MESSAGING_FAILURE, "Permission to access location is denied with Don't Ask Again.");
+                }
+			}, {
+                requireBackgroundAccess : true
+            }
 		);
 	}
 
@@ -16470,6 +16437,17 @@ function OAuthHandler(serviceUrl, providerName, appkey, callback, type, options,
             }
         }
 
+        function resetOAuthLoginUserDefinedBrowserEvent(browserWidget) {
+            //Resetting the overridden onPageStarted/handleRequest callbacks to user defined callback after invoking /token call.
+            //If not reset, when the user does login next time using same browser widget, overridden SDK's handleRequestCallback
+            //is considered as user defined callback on these events. This ends up calling handleRequestCallback again.
+            //#ifdef PLATFORM_NATIVE_ANDROID
+            browserWidget.onPageStarted = userDefinedBrowserEvent;
+            //#else
+            browserWidget.handleRequest = userDefinedBrowserEvent;
+            //#endif
+        }
+
 		function handleRequestCallback(browserWidget, params) {
 
 			var originalUrl = params["originalURL"];
@@ -16503,6 +16481,9 @@ function OAuthHandler(serviceUrl, providerName, appkey, callback, type, options,
                 }
             }
             verifyAndCallUserDefinedBrowserEvent(browserWidget, params);
+            if(isLoginCallbackInvoked) {
+                resetOAuthLoginUserDefinedBrowserEvent(browserWidget);
+            }
 			return false;
 		}
 	}
@@ -17017,7 +16998,21 @@ kony.setupsdks = function (initConfig, successCallBack, errorCallBack) {
                     return null;
                 }
             } else {
-                dsAppServiceDoc = JSON.parse(dsAppServiceDoc);
+                // App getting crashed while trying to parse encrypted AppServiceDoc data.
+                // To handle this scenario adding try catch and checking for salt key. If salt key is available
+                // setting flag to true and calling same getAppConfigFromCache() again to decrypt the data else returning null
+                try {
+                    dsAppServiceDoc = JSON.parse(dsAppServiceDoc);
+                } catch (err) {
+                    if(!kony.sdk.isNullOrUndefined(kony.sdk.dataStore.getItem(kony.sdk.util.prefixAppid(kony.sdk.constants.SHARED_CLIENT_IDENTIFIER)))) {
+                        kony.sdk.logsdk.debug("Setting Encryption App Config flag to true");
+                        kony.sdk.dataStore.setItem(kony.sdk.util.prefixAppid(kony.sdk.constants.ENCRYPTION_APPCONFIG_FLAG), true);
+                        return getAppConfigFromCache();
+                    } else {
+                        kony.sdk.logsdk.debug("Failed to parse App Service Doc data form Cache" + err );
+                        return null;
+                    }
+                }
             }
         } else {
             kony.sdk.logsdk.debug("Failed to retrieve config data form Cache");
@@ -18323,9 +18318,9 @@ kony.sdk.util.saveMetadatainDs = function (appKey, appSecret, servConfig) {
 
     kony.sdk.dataStore.setItem(kony.sdk.constants.TOOLS_ETAG_ID, servConfig.service_doc_etag);
     kony.sdk.logsdk.debug("Update done. Current version = " + kony.sdk.getCurrentInstance().mainRef.config.service_doc_etag + " Updated to " + servConfig.service_doc_etag);
-
     kony.sdk.dataStore.setItem(kony.sdk.util.prefixAppid(kony.sdk.constants.MOBILE_FABRIC_SERVICE_DOC), kony.sdk.util.encryptAppConfig(JSON.stringify(servConfig)));
     kony.sdk.dataStore.setItem(appConfig.appId, JSON.stringify(appId));
+    kony.sdk.dataStore.setItem(kony.sdk.util.prefixAppid(kony.sdk.constants.ENCRYPTION_APPCONFIG_FLAG), true);
 
     kony.sdk.logsdk.info("### saveMetadatainDs:: metadata saved successfuly in dataStore");
 };
@@ -18442,17 +18437,22 @@ kony.sdk.util.decryptSSOToken = function (encryptedtoken) {
 /**
  * Generates key to encrypt/decrypt any text.
  * @param salt {Array}
+ * @param keyStrength {Integer}
  * @returns string
  */
-kony.sdk.util.generateSecureKeyFromText = function (salt) {
+kony.sdk.util.generateSecureKeyFromText = function (salt, keyStrength) {
     var secureKey = "";
 
     if (!kony.sdk.isNullOrUndefined(salt) && kony.sdk.isArray(salt)) {
         var params = {};
         params["passphrasetext"] = salt;
         params["subalgo"] = kony.sdk.constants.ENCRYPTION_ALGO_AES;
-        params["passphrasehashalgo"] = kony.sdk.constants.HASH_FUNCTION_MD5;
-        secureKey = kony.crypto.newKey(kony.sdk.constants.ENC_TYPE_PASSPHRASE, 128, params);
+        if(kony.sdk.getPlatformName() === kony.sdk.constants.PLATFORM_IOS && keyStrength === kony.sdk.constants.AES_ALGO_KEY_STRENGTH_256) {
+            params[kony.sdk.constants.ENC_PASSPHRASE_HASH_ALGO] = kony.sdk.constants.HASH_FUNCTION_SHA2;
+        } else {
+            params[kony.sdk.constants.ENC_PASSPHRASE_HASH_ALGO] = kony.sdk.constants.HASH_FUNCTION_MD5;
+        }
+        secureKey = kony.crypto.newKey(kony.sdk.constants.ENC_TYPE_PASSPHRASE, keyStrength, params);
     }
     else {
         throw new Exception(kony.sdk.errorConstants.CONFIGURATION_FAILURE, "Invalid param. salt cannot be null, should be of type Array");
@@ -18470,7 +18470,10 @@ kony.sdk.util.generateSecureKeyFromText = function (salt) {
  */
 kony.sdk.util.encryptText = function (text, salt, encryptionAlgo) {
     try {
-        var encryptionKey = kony.sdk.util.generateSecureKeyFromText(salt);
+        var encryptionKey = kony.sdk.util.generateSecureKeyFromText(salt, kony.sdk.constants.AES_ALGO_KEY_STRENGTH_256);
+        if(kony.sdk.isNullOrUndefined(encryptionKey)) {
+            encryptionKey = kony.sdk.util.generateSecureKeyFromText(salt, kony.sdk.constants.AES_ALGO_KEY_STRENGTH_128);
+        }
         var encryptedText = kony.crypto.encrypt(encryptionAlgo, encryptionKey, text, {});
         if(kony.sdk.isNullOrUndefined(encryptedText) || encryptedText == "") {
             kony.sdk.util.recordCustomEvent("INVALID CRYPTO RESPONSE", "encryptedText: " + encryptedText, "encryptedText: null or EMPTY", "cipher", null);
@@ -18487,26 +18490,80 @@ kony.sdk.util.encryptText = function (text, salt, encryptionAlgo) {
 };
 
 /**
- * Decrypts text with the given salt and encryptionAlgo.
+ * Decrypts text with given decryptionAlgo and decryptionKey
  * @param text to be decrypted
- * @param salt additional input to a one-way function that "hashes" data
- * @param encryptionAlgo algo to be used to decrypt
+ * @param salt additional input to a one-way function that "hashes" data in case of fallback
+ * @param decryptionAlgo algo to be used to decrypt
+ * @param decryptionKey key to be used to decrypt
  * @returns decrypted string
  */
-kony.sdk.util.decryptText = function (text, salt, decryptionAlgo) {
+kony.sdk.util.performDecryption = function (text, salt, decryptionAlgo, decryptionKey) {
     try {
-        var decryptionKey = kony.sdk.util.generateSecureKeyFromText(salt);
         // convert base64 to rawbytes
         var raw_text = kony.sdk.util.convertBase64ToRawBytes(text);
 
         var decryptText = kony.crypto.decrypt(decryptionAlgo, decryptionKey, raw_text, {});
         if(kony.sdk.isNullOrUndefined(decryptText) || decryptText == "") {
             kony.sdk.util.recordCustomEvent("INVALID CRYPTO RESPONSE", "get decryptText: " + text, "decryptText: null", "decipher", null);
+            if(isKeyStrength256ForDecryption) {
+                isKeyStrength256ForDecryption = false;
+                decryptText = kony.sdk.util.fallBackToAES128ForDecryption(text, salt, decryptionAlgo);
+            }
         }
         return decryptText;
     } catch (exception) {
         kony.sdk.logsdk.error("Exception occurred while converting to raw text, exception :", exception);
         kony.sdk.util.recordCustomEvent("INVALID CRYPTO RESPONSE", "get decryptText: " + text, "decryptText: exception", "decipher", null);
+    }
+};
+
+/**
+ * Initiates text decryption with the given salt and encryptionAlgo 128 bit
+ * Immediate encryption with 256 bit is initiated for cases where 256 bit is supported and are using 128 bit until now
+ * @param text to be decrypted
+ * @param salt additional input to a one-way function that "hashes" data
+ * @param decryptionAlgo algo to be used to decrypt
+ * @returns decrypted string
+ */
+kony.sdk.util.fallBackToAES128ForDecryption = function(text, salt, decryptionAlgo) {
+    try {
+        var decryptionKey = kony.sdk.util.generateSecureKeyFromText(salt, kony.sdk.constants.AES_ALGO_KEY_STRENGTH_128);
+        var decryptText = kony.sdk.util.performDecryption(text, salt, decryptionAlgo, decryptionKey);
+        kony.sdk.util.encryptText(decryptText, salt, kony.sdk.constants.ENCRYPTION_ALGO_AES);
+
+        return decryptText;
+    } catch (exception) {
+        kony.sdk.logsdk.error("Exception occurred while decrypting text using AES 128, exception :", exception);
+    }
+};
+
+/**
+ * Flag to maintain info on decryption key size
+ * @type {boolean}
+ */
+isKeyStrength256ForDecryption = true;
+
+/**
+ * Initiates text decryption with the given salt and encryptionAlgo 256 bit and falls back to 128 bit in cases of 256 bit not being supported
+ * @param text to be decrypted
+ * @param salt additional input to a one-way function that "hashes" data
+ * @param decryptionAlgo algo to be used to decrypt
+ * @returns decrypted string
+ */
+kony.sdk.util.decryptText = function (text, salt, decryptionAlgo) {
+    try {
+        var decryptedText = null;
+        var decryptionKey = kony.sdk.util.generateSecureKeyFromText(salt, kony.sdk.constants.AES_ALGO_KEY_STRENGTH_256);
+        if(!kony.sdk.isNullOrUndefined(decryptionKey)) {
+            isKeyStrength256ForDecryption = true;
+            decryptedText = kony.sdk.util.performDecryption(text, salt, decryptionAlgo, decryptionKey);
+        } else {
+            isKeyStrength256ForDecryption = false;
+            decryptedText = kony.sdk.util.fallBackToAES128ForDecryption(text, salt, decryptionAlgo);
+        }
+        return decryptedText;
+    } catch (exception) {
+        kony.sdk.logsdk.error("Exception occurred while decrypting text using AES 256, exception :", exception);
     }
 };
 
@@ -18608,7 +18665,6 @@ kony.sdk.util.loadMetadataFromDs = function (dsAppMetaData, dsAppServiceDoc) {
 kony.sdk.util.getSharedClientId = function() {
     if(kony.sdk.isNullOrUndefined(kony.sdk.dataStore.getItem(kony.sdk.util.prefixAppid(kony.sdk.constants.SHARED_CLIENT_IDENTIFIER)))) {
         kony.sdk.dataStore.setItem(kony.sdk.util.prefixAppid(kony.sdk.constants.SHARED_CLIENT_IDENTIFIER), kony.license.generateUUID());
-        kony.sdk.dataStore.setItem(kony.sdk.util.prefixAppid(kony.sdk.constants.ENCRYPTION_APPCONFIG_FLAG), true);
         kony.sdk.util.recordCustomEvent("INVALID SHARED CLIENT_ID", "Generated new SharedClient ID", "SCID: NEW_VALUE", "decipher", null);
     }
     var sharedClientID = kony.sdk.dataStore.getItem(kony.sdk.util.prefixAppid(kony.sdk.constants.SHARED_CLIENT_IDENTIFIER));
