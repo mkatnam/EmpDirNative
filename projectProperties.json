@@ -315,7 +315,6 @@
     "enableCordova": false,
     "enableCustomData": false,
     "enableIdForAutomation": false,
-    "enableJasmineAutomation": true,
     "enableOfflineObjects": "false",
     "enableOfflineObjectsDW": "false",
     "enableOfflineObjectsSpa": "false",
@@ -463,7 +462,7 @@
             "version": "1.0"
         }
     },
-    "konyVizVersion": "9.2.12",
+    "konyVizVersion": "9.2.3",
     "lastmodifiedtime": "1554189947616",
     "location": "false",
     "log_level": "ERROR",
