@@ -11,7 +11,8 @@
 		"contextObj": {
 			"type": "forms",
 			"platform": null,
-			"KUID": "g2392df16f174afdab39cd2e147d5cc7"
+			"KUID": "g2392df16f174afdab39cd2e147d5cc7",
+			"name": "frmLogin"
 		},
 		"language": "js",
 		"actions": [
