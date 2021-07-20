@@ -17,6 +17,7 @@
 			}
 		],
 		"contextObj": {
+			"name": "frmList",
 			"type": "forms",
 			"platform": null,
 			"KUID": "a5f4a43913094f90a21411622a129a5b"

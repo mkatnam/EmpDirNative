@@ -2,7 +2,9 @@
     "testCaseName": "emp_dir_native_testscripts",
     "testSuiteName": "Test Cases",
     "channelName": "Mobile",
-    "usedBy": [],
+    "usedBy": [
+        "emp_dir_native_testsuite.js"
+    ],
     "steps": [
         {
             "actionName": "Wait For",

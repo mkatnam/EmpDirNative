@@ -9,18 +9,18 @@ define({
         function SHOW_ALERT__c413a02a2d17404584bed45c463a786b_True() {}
 
         function INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Success(response) {
-            voltmx.application.dismissLoadingScreen();
-            var ntf = new voltmx.mvc.Navigation("frmLogin");
+            kony.application.dismissLoadingScreen();
+            var ntf = new kony.mvc.Navigation("frmLogin");
             ntf.navigate();
         }
 
         function INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Failure(error) {
-            voltmx.application.dismissLoadingScreen();
+            kony.application.dismissLoadingScreen();
 
             function SHOW_ALERT__c413a02a2d17404584bed45c463a786b_Callback() {
                 SHOW_ALERT__c413a02a2d17404584bed45c463a786b_True();
             }
-            voltmx.ui.Alert({
+            kony.ui.Alert({
                 "alertType": constants.ALERT_TYPE_INFO,
                 "alertTitle": null,
                 "yesLabel": null,
@@ -32,7 +32,7 @@ define({
                 "iconPosition": constants.ALERT_ICON_POSITION_LEFT
             });
         }
-        voltmx.application.showLoadingScreen(null, null, constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
+        kony.application.showLoadingScreen(null, null, constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
         if (logout_inputparam == undefined) {
             var logout_inputparam = {};
         }
@@ -45,28 +45,28 @@ define({
         var self = this;
 
         function INVOKE_OBJECT_SERVICE__a927b7e02a554f5c8f9ef347c0ba849a_Callback(employees) {
-            var tempCollection8810 = [];
-            var tempData8675 = employees.records;
-            for (var each7181 in tempData8675) {
-                tempCollection8810.push({
+            var tempCollection9121 = [];
+            var tempData4783 = employees.records;
+            for (var each1529 in tempData4783) {
+                tempCollection9121.push({
                     "employeeFieldGroup": {
-                        "text": tempData8675[each7181]["Department"]
+                        "text": tempData4783[each1529]["Department"]
                     },
                     "employeeFieldTitle": {
-                        "text": tempData8675[each7181]["Designation"]
+                        "text": tempData4783[each1529]["Designation"]
                     },
                     "employeeId": {
-                        "text": tempData8675[each7181]["Emp_id"]
+                        "text": tempData4783[each1529]["Emp_id"]
                     },
                     "employeeSegImage": {
-                        "src": tempData8675[each7181]["Image_URL"]
+                        "src": tempData4783[each1529]["Image_URL"]
                     },
                     "employeeFieldName": {
-                        "text": tempData8675[each7181]["Name"]
+                        "text": tempData4783[each1529]["Name"]
                     },
                 });
             }
-            self.view.employeeSegment.setData(tempCollection8810);
+            self.view.employeeSegment.setData(tempCollection9121);
         }
         if (employees_inputparam == undefined) {
             var employees_inputparam = {};
@@ -86,7 +86,7 @@ define({
     AS_Segment_ce3a21e8b0374dcc83650de7b116c97c: function AS_Segment_ce3a21e8b0374dcc83650de7b116c97c(eventobject, sectionNumber, rowNumber) {
         var self = this;
         selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;
-        var ntf = new voltmx.mvc.Navigation("frmDetails");
+        var ntf = new kony.mvc.Navigation("frmDetails");
         ntf.navigate();
     }
 });
