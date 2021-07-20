@@ -2,9 +2,7 @@
     "testCaseName": "emp_dir_tab_testscripts",
     "testSuiteName": "Test Cases",
     "channelName": "Tablet",
-    "usedBy": [
-        "emp_dir_tab_testsuite.js"
-    ],
+    "usedBy": [],
     "steps": [
         {
             "actionName": "Wait For",

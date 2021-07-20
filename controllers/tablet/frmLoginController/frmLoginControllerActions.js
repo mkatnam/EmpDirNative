@@ -9,18 +9,18 @@ define({
         function SHOW_ALERT_ide_onClick_d51554f7765347c5b132b3818fc3751b_True() {}
 
         function INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb_Success(response) {
-            kony.application.dismissLoadingScreen();
-            var ntf = new kony.mvc.Navigation("frmList");
+            voltmx.application.dismissLoadingScreen();
+            var ntf = new voltmx.mvc.Navigation("frmList");
             ntf.navigate();
         }
 
         function INVOKE_IDENTITY_SERVICE_ide_onClick_f6a7140d5c424f0ca202ab7e148d87cb_Failure(error) {
-            kony.application.dismissLoadingScreen();
+            voltmx.application.dismissLoadingScreen();
 
             function SHOW_ALERT_ide_onClick_d51554f7765347c5b132b3818fc3751b_Callback() {
                 SHOW_ALERT_ide_onClick_d51554f7765347c5b132b3818fc3751b_True();
             }
-            kony.ui.Alert({
+            voltmx.ui.Alert({
                 "alertType": constants.ALERT_TYPE_INFO,
                 "alertTitle": null,
                 "yesLabel": null,
@@ -32,7 +32,7 @@ define({
                 "iconPosition": constants.ALERT_ICON_POSITION_LEFT
             });
         }
-        kony.application.showLoadingScreen(null, null, constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
+        voltmx.application.showLoadingScreen(null, null, constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
         if (login_inputparam == undefined) {
             var login_inputparam = {};
         }

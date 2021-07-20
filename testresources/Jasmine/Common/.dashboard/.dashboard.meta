@@ -1,56 +1,12 @@
 [
     {
         "testName": "emp_dir_web_testsuite",
-        "result": "jasmineReport19-05-2021_16_55_26.html",
+        "result": "jasmineReport20-07-2021_00_11_27.html",
         "passedCount": 1,
         "failedCount": 0,
         "pendingCount": 0,
-        "timeStamp": "19-05-2021 16:55:26",
+        "timeStamp": "20-07-2021 00:11:27",
         "runnerType": "TestSuiteRunner",
-        "channelName": "Desktop",
-        "crashed": false
-    },
-    {
-        "testName": "emp_dir_web_testsuite",
-        "result": "jasmineReport19-05-2021_16_55_08.html",
-        "passedCount": 0,
-        "failedCount": 1,
-        "pendingCount": 0,
-        "timeStamp": "19-05-2021 16:55:08",
-        "runnerType": "TestSuiteRunner",
-        "channelName": "Desktop",
-        "crashed": false
-    },
-    {
-        "testName": "emp_dir_web_testscripts",
-        "result": "jasmineReport19-05-2021_16_54_39.html",
-        "passedCount": 1,
-        "failedCount": 0,
-        "pendingCount": 0,
-        "timeStamp": "19-05-2021 16:54:39",
-        "runnerType": "TestCaseRecorder",
-        "channelName": "Desktop",
-        "crashed": false
-    },
-    {
-        "testName": "emp_dir_web_testscripts",
-        "result": "jasmineReport19-05-2021_16_54_02.html",
-        "passedCount": 0,
-        "failedCount": 1,
-        "pendingCount": 0,
-        "timeStamp": "19-05-2021 16:54:02",
-        "runnerType": "TestCaseRecorder",
-        "channelName": "Desktop",
-        "crashed": false
-    },
-    {
-        "testName": "emp_dir_web_testscripts",
-        "result": "jasmineReport19-05-2021_16_53_23.html",
-        "passedCount": 1,
-        "failedCount": 0,
-        "pendingCount": 0,
-        "timeStamp": "19-05-2021 16:53:23",
-        "runnerType": "TestCaseRecorder",
         "channelName": "Desktop",
         "crashed": false
     }
