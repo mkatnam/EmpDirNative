@@ -1,8 +1,13 @@
 define({
     /*
-          This is an auto generated file and any modifications to it may result in corruption of the action sequence.
-        */
-    /** onClick defined for headerLogoutButton **/
+        This is an auto generated file and any modifications to it may result in corruption of the action sequence.
+    */
+    AS_Segment_ce3a21e8b0374dcc83650de7b116c97c: function AS_Segment_ce3a21e8b0374dcc83650de7b116c97c(eventobject, sectionNumber, rowNumber) {
+        var self = this;
+        selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;
+        var ntf = new voltmx.mvc.Navigation("frmDetails");
+        ntf.navigate();
+    },
     AS_Button_c3c22fb1a3a147678f7dc74a1ce1fee8: function AS_Button_c3c22fb1a3a147678f7dc74a1ce1fee8(eventobject) {
         var self = this;
 
@@ -40,33 +45,32 @@ define({
         logout_inputparam["operation"] = "logout";
         ShoppingIdentity$logout = mfidentityserviceinvoker("ShoppingIdentity", logout_inputparam, INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Success, INVOKE_IDENTITY_SERVICE__bbbfdf7731c1499dab0077baa5f191de_Failure);
     },
-    /** onMapping defined for frmList **/
     AS_Form_f137f613a1034f27ab9f758ce187856f: function AS_Form_f137f613a1034f27ab9f758ce187856f(eventobject) {
         var self = this;
 
         function INVOKE_OBJECT_SERVICE__a927b7e02a554f5c8f9ef347c0ba849a_Callback(employees) {
-            var tempCollection8810 = [];
-            var tempData8675 = employees.records;
-            for (var each7181 in tempData8675) {
-                tempCollection8810.push({
+            var tempCollection9815 = [];
+            var tempData9537 = employees.records;
+            for (var each7323 in tempData9537) {
+                tempCollection9815.push({
                     "employeeFieldGroup": {
-                        "text": tempData8675[each7181]["Department"]
+                        "text": tempData9537[each7323]["Department"]
                     },
                     "employeeFieldTitle": {
-                        "text": tempData8675[each7181]["Designation"]
+                        "text": tempData9537[each7323]["Designation"]
                     },
                     "employeeId": {
-                        "text": tempData8675[each7181]["Emp_id"]
+                        "text": tempData9537[each7323]["Emp_id"]
                     },
                     "employeeSegImage": {
-                        "src": tempData8675[each7181]["Image_URL"]
+                        "src": tempData9537[each7323]["Image_URL"]
                     },
                     "employeeFieldName": {
-                        "text": tempData8675[each7181]["Name"]
+                        "text": tempData9537[each7323]["Name"]
                     },
                 });
             }
-            self.view.employeeSegment.setData(tempCollection8810);
+            self.view.employeeSegment.setData(tempCollection9815);
         }
         if (employees_inputparam == undefined) {
             var employees_inputparam = {};
@@ -81,12 +85,5 @@ define({
         var employees_httpconfigs = {};
         employees_inputparam["httpconfig"] = employees_httpconfigs;
         EmployeeServices$employees$get = mfobjectsecureinvokerasync(employees_inputparam, "EmployeeServices", "employees", INVOKE_OBJECT_SERVICE__a927b7e02a554f5c8f9ef347c0ba849a_Callback);
-    },
-    /** onRowClick defined for employeeSegment **/
-    AS_Segment_ce3a21e8b0374dcc83650de7b116c97c: function AS_Segment_ce3a21e8b0374dcc83650de7b116c97c(eventobject, sectionNumber, rowNumber) {
-        var self = this;
-        selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;
-        var ntf = new voltmx.mvc.Navigation("frmDetails");
-        ntf.navigate();
     }
 });

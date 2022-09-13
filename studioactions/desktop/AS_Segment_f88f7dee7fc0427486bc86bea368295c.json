@@ -1,47 +1,41 @@
 {
-	"AS_Segment_f88f7dee7fc0427486bc86bea368295c": {
-		"id": "AS_Segment_f88f7dee7fc0427486bc86bea368295c",
-		"type": "ACTION_SEQUENCE",
-		"params": [
-			{
-				"datatype": "collection",
-				"name": "eventobject"
-			},
-			{
-				"datatype": "number",
-				"name": "sectionNumber"
-			},
-			{
-				"datatype": "number",
-				"name": "rowNumber"
-			}
-		],
-		"contextObj": {
-			"type": "forms",
-			"platform": null,
-			"KUID": "ee48036bb14843458e8660797ac65f72"
-		},
-		"language": "js",
-		"actions": [
-			{
-				"id": "ADD_SNIPPET_ide_onRowClick_d0a7229aa695483b96264790cebed650",
-				"type": "ADD_SNIPPET",
-				"codeSnippet": "selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;",
-				"callbackType": null
-			},
-			{
-				"id": "NAVIGATE_TO_FORM__ide_onRowClick_d4439d91c1254d20a051e157cb1d855f",
-				"type": "NAVIGATE_TO_FORM",
-				"formId": "frmDetails",
-				"formKUID": "d82146a3c27b4743b15b8e1d65a5de7c",
-				"mappings": {},
-				"mappingsOrder": [],
-				"callbackType": null,
-				"enableMappingEditor": true,
-				"package": "",
-				"navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onRowClick\",\n        \"widgetId\": \"employeeSegment\"\n    }\n}",
-				"isCustomInput": false
-			}
-		]
-	}
+    "AS_Segment_f88f7dee7fc0427486bc86bea368295c": {
+        "id": "AS_Segment_f88f7dee7fc0427486bc86bea368295c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "type": "forms",
+            "platform": null,
+            "KUID": "ee48036bb14843458e8660797ac65f72",
+            "name": "frmList"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_ide_onRowClick_d0a7229aa695483b96264790cebed650",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "selectedEmployeeId = this.view.employeeSegment.selectedRowItems[0].employeeId.text;",
+            "callbackType": null
+        }, {
+            "id": "NAVIGATE_TO_FORM__ide_onRowClick_d4439d91c1254d20a051e157cb1d855f",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDetails",
+            "formKUID": "d82146a3c27b4743b15b8e1d65a5de7c",
+            "mappings": {},
+            "mappingsOrder": [],
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onRowClick\",\n        \"widgetId\": \"employeeSegment\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
 }

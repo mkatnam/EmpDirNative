@@ -2,7 +2,7 @@
     "groupName": "Test Suites",
     "testSuiteName": "emp_dir_tab_testsuite",
     "testCaseInfo": [
-        "tab_test_cases.js"
+        "emp_dir_tab_testscripts.js"
     ],
     "usedBy": []
 }

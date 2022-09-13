@@ -1,33 +1,30 @@
 {
-	"AS_Button_ief447ed11ae4e82a0bf1016def839ee": {
-		"id": "AS_Button_ief447ed11ae4e82a0bf1016def839ee",
-		"type": "ACTION_SEQUENCE",
-		"params": [
-			{
-				"datatype": "collection",
-				"name": "eventobject"
-			}
-		],
-		"contextObj": {
-			"type": "forms",
-			"platform": null,
-			"KUID": "c5b8a1152e944b6da9e63185662fe3c0"
-		},
-		"language": "js",
-		"actions": [
-			{
-				"id": "NAVIGATE_TO_FORM__ide_onClick_a9c5e6fc7a7b49a9989de3c29c45b55a",
-				"type": "NAVIGATE_TO_FORM",
-				"formId": "frmList",
-				"formKUID": "a5f4a43913094f90a21411622a129a5b",
-				"mappings": {},
-				"mappingsOrder": [],
-				"callbackType": null,
-				"enableMappingEditor": true,
-				"package": "",
-				"navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"headerBackButton\"\n    }\n}",
-				"isCustomInput": false
-			}
-		]
-	}
+    "AS_Button_ief447ed11ae4e82a0bf1016def839ee": {
+        "id": "AS_Button_ief447ed11ae4e82a0bf1016def839ee",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "type": "forms",
+            "platform": null,
+            "KUID": "c5b8a1152e944b6da9e63185662fe3c0",
+            "name": "frmDetails"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM__ide_onClick_a9c5e6fc7a7b49a9989de3c29c45b55a",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmList",
+            "formKUID": "a5f4a43913094f90a21411622a129a5b",
+            "mappings": {},
+            "mappingsOrder": [],
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"headerBackButton\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
 }

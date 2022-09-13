@@ -1,14 +1,12 @@
 define({
     /*
-          This is an auto generated file and any modifications to it may result in corruption of the action sequence.
-        */
-    /** onClick defined for headerBackButton **/
+        This is an auto generated file and any modifications to it may result in corruption of the action sequence.
+    */
     AS_Button_bfc64c6d54f54bbabc5086be43b8cb0d: function AS_Button_bfc64c6d54f54bbabc5086be43b8cb0d(eventobject) {
         var self = this;
         var ntf = new voltmx.mvc.Navigation("frmList");
         ntf.navigate();
     },
-    /** onClick defined for headerLogoutButton **/
     AS_Button_df8a343f702b42d2a49ed2544a907574: function AS_Button_df8a343f702b42d2a49ed2544a907574(eventobject) {
         var self = this;
 
@@ -46,7 +44,6 @@ define({
         logout_inputparam["operation"] = "logout";
         ShoppingIdentity$logout = mfidentityserviceinvoker("ShoppingIdentity", logout_inputparam, INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9_Success, INVOKE_IDENTITY_SERVICE__fdb85e7cfa594924bce1c6477d39c8c9_Failure);
     },
-    /** preShow defined for frmDetails **/
     AS_Form_h31775c79e5a4f48a55eacc64ab6377b: function AS_Form_h31775c79e5a4f48a55eacc64ab6377b(eventobject) {
         var self = this;
 

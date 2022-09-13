@@ -39,24 +39,22 @@
                     "from": "d82146a3c27b4743b15b8e1d65a5de7c",
                     "isPSP": false,
                     "points": [
-                        177.6,
-                        670.2452636718749,
-                        203.6,
-                        670.2452636718749,
-                        330.6,
-                        670.2452636718749,
-                        330.6,
-                        588.445263671875,
-                        786.1999999999999,
-                        588.445263671875,
-                        786.1999999999999,
-                        670.245263671875,
-                        893.1999999999999,
-                        670.245263671875,
-                        919.1999999999999,
-                        670.245263671875
+                        88,
+                        424.845263671875,
+                        88,
+                        414.845263671875,
+                        88,
+                        412,
+                        88,
+                        412,
+                        88,
+                        338.045263671875,
+                        178,
+                        338.045263671875,
+                        188,
+                        338.045263671875
                     ],
-                    "to": "ee85f8531c894ceda728ac165ebad9c5",
+                    "to": "g2392df16f174afdab39cd2e147d5cc7",
                     "widgetKUID": "i3c1cddda99d49d2a19bdd29128c5e36"
                 },
                 {
@@ -67,20 +65,20 @@
                     "from": "a5f4a43913094f90a21411622a129a5b",
                     "isPSP": false,
                     "points": [
-                        633.1999999999999,
-                        133.91193033854165,
-                        651.1999999999999,
-                        133.91193033854165,
-                        765.5876303579918,
-                        133.91193033854165,
-                        765.5876303579918,
-                        506.645263671875,
-                        909.1999999999999,
-                        506.645263671875,
-                        919.1999999999999,
-                        506.645263671875
+                        463.5999999999999,
+                        86.12526367187496,
+                        429.5999999999999,
+                        86.12526367187496,
+                        428,
+                        86.12526367187496,
+                        428,
+                        286.9785970052083,
+                        358,
+                        286.9785970052083,
+                        348,
+                        286.9785970052083
                     ],
-                    "to": "ee85f8531c894ceda728ac165ebad9c5",
+                    "to": "g2392df16f174afdab39cd2e147d5cc7",
                     "widgetKUID": "bf1fc31a5ec646abab5f2b062c84c110"
                 },
                 {
@@ -108,28 +106,28 @@
                     "widgetKUID": "d83ae33212af45c4b76d7682c9967727"
                 },
                 {
-                    "actionId": "NAVIGATE_TO_FORM___ebeca33d1834405fb5bf912ed142a4dc",
-                    "actionSequenceId": "AS_Button_f41bf70e129843ba9b9baa1b11438ea4",
-                    "beautifiedPath": "frmLogin > loginButton > onClick",
+                    "actionId": "NAVIGATE_TO_FORM__cd7ce2392aca425193dc9ff8374d22be",
+                    "actionSequenceId": "AS_Button_g434bbc836a6420394ad7b1c928b7b94",
+                    "beautifiedPath": "frmLogin > btnLOGIN > onClick",
                     "evt": "ide_onClick",
-                    "from": "ee85f8531c894ceda728ac165ebad9c5",
+                    "from": "g2392df16f174afdab39cd2e147d5cc7",
                     "isPSP": false,
                     "points": [
-                        919.1999999999999,
-                        588.445263671875,
-                        901.1999999999999,
-                        588.445263671875,
-                        900,
-                        588.445263671875,
-                        900,
-                        242.97859700520831,
-                        643.1999999999999,
-                        242.97859700520831,
-                        633.1999999999999,
-                        242.97859700520831
+                        348,
+                        389.11193033854164,
+                        366,
+                        389.11193033854164,
+                        366,
+                        389.11193033854164,
+                        366,
+                        269.96526367187494,
+                        453.5999999999999,
+                        269.96526367187494,
+                        463.5999999999999,
+                        269.96526367187494
                     ],
                     "to": "a5f4a43913094f90a21411622a129a5b",
-                    "widgetKUID": "d8cba6562c5847cdb436e61c13f8c697"
+                    "widgetKUID": "f83d565060af42a1b59f7a8e25e5a6b9"
                 }
             ],
             "nodeDataArray": [
@@ -139,7 +137,7 @@
                     "isStartupForm": false,
                     "key": "d82146a3c27b4743b15b8e1d65a5de7c",
                     "loc": "8 424.845263671875",
-                    "thumbnailURL": null
+                    "thumbnailURL": "/assets/EmpDirNative/forms/mobile/frmDetails.sm/.thumbs/default.jpeg"
                 },
                 {
                     "formKUID": "a5f4a43913094f90a21411622a129a5b",
@@ -147,15 +145,15 @@
                     "isStartupForm": false,
                     "key": "a5f4a43913094f90a21411622a129a5b",
                     "loc": "463.5999999999999 24.845263671875003",
-                    "thumbnailURL": null
+                    "thumbnailURL": "/assets/EmpDirNative/forms/mobile/frmList.sm/.thumbs/default.jpeg"
                 },
                 {
-                    "formKUID": "ee85f8531c894ceda728ac165ebad9c5",
+                    "formKUID": "g2392df16f174afdab39cd2e147d5cc7",
                     "formName": "frmLogin",
                     "isStartupForm": true,
-                    "key": "ee85f8531c894ceda728ac165ebad9c5",
-                    "loc": "919.1999999999999 424.845263671875",
-                    "thumbnailURL": null
+                    "key": "g2392df16f174afdab39cd2e147d5cc7",
+                    "loc": "188 184.845263671875",
+                    "thumbnailURL": "/assets/EmpDirNative/forms/mobile/frmLogin.sm/.thumbs/default.jpeg"
                 }
             ]
         }
